@@ -33,6 +33,10 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
+# Copy modules for 2708+ radio
+PRODUCT_COPY_FILES += \
+	device/htc/dream_sapphire/kernel/2708-modules.sqf:system/lib/modules/modules.sqf
+
 PRODUCT_PROPERTY_OVERRIDES := \
     keyguard.no_require_sim=true \
     ro.ril.hsxpa=2 \
@@ -71,15 +75,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # media configuration xml file
 PRODUCT_COPY_FILES += \
     device/htc/dream_sapphire/media_profiles.xml:/system/etc/media_profiles.xml
-
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/htc/dream_sapphire/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
 
 ## (2) Also get non-open-source aspects if available
 $(call inherit-product-if-exists, vendor/htc/dream_sapphire/dream_sapphire-vendor.mk)

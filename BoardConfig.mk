@@ -49,6 +49,8 @@ TARGET_BOOTLOADER_LIBS := \
 TARGET_BOOTLOADER_LINK_SCRIPT := \
 	hardware/msm7k/boot/boot.ld
 
+BOARD_KERNEL_BASE := 02000000
+
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null
 
 BOARD_HAVE_BLUETOOTH := true
@@ -85,4 +87,3 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x05a00000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x127c0000
 
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_sapphire librecovery_ui_htc
-TARGET_PREBUILT_KERNEL := device/htc/dream_sapphire/kernel
