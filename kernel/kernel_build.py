@@ -6,7 +6,7 @@ This script is to aid in generating the ebi0, ebi1, 2708 kernels for
 ezGingerbread Dream/Sapphire, such as the pre-built ones.
 
 Please note this script is to be run from the android root as:
-device/htc/dream-sapphire/kernel/kernel_build.py
+device/htc/dream_sapphire/kernel/kernel_build.py
 
 *****************************************************
 
@@ -15,19 +15,19 @@ To re-generate the files in this directory:
 Initial build (or clean build where we re-fetch the kernel code):
 
 #get the kernel source
-device/htc/dream-sapphire/kernel/kernel_build.py fetch
+device/htc/dream_sapphire/kernel/kernel_build.py fetch
 #build the kernel
-device/htc/dream-sapphire/kernel/kernel_build.py build
+device/htc/dream_sapphire/kernel/kernel_build.py build
 
 Update build (where you want a clean build but don't want to re-fetch all of
               the kernel source via git):
 
 #clean the current build
-device/htc/dream-sapphire/kernel/kernel_build.py clean
+device/htc/dream_sapphire/kernel/kernel_build.py clean
 #sync the kernel source
-device/htc/dream-sapphire/kernel/kernel_build.py sync
+device/htc/dream_sapphire/kernel/kernel_build.py sync
 #build
-device/htc/dream-sapphire/kernel/kernel_build.py build
+device/htc/dream_sapphire/kernel/kernel_build.py build
 
 ******************************************************
 
@@ -152,7 +152,7 @@ def runbuild(outpath,cfg):
 
 def copyKernelFiles():
     """Copy the new kernel files into place"""
-    dskernel='device/htc/dream-sapphire/kernel'
+    dskernel='device/htc/dream_sapphire/kernel'
     
     #delete existing files
     for filename in ( '2708-modules.sqf' ,
@@ -182,7 +182,7 @@ def main():
     """entry point"""
     if(not os.path.isdir(toolchain_path)):
         print("Please run this script from the android build root: ")
-        print("> device/htc/dream-sapphire/kernel/kernel_build.py")
+        print("> device/htc/dream_sapphire/kernel/kernel_build.py")
         return
     
     #we appear to be running properly
@@ -231,7 +231,7 @@ def main():
         
     elif(action == "help"):
         #provide help string
-        print("> device/htc/dream-sapphire/kernel/kernel_build.py <action>")
+        print("> device/htc/dream_sapphire/kernel/kernel_build.py <action>")
         print(" ")
         print("Actions:")
         print(" fetch: remove any existing git kernel repo and clone a new one")
