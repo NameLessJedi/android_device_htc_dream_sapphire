@@ -16,7 +16,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+PRODUCT_COPY_FILES := \
+    device/htc/dream_sapphire/gps.conf:system/etc/gps.conf
 
 DEVICE_PACKAGE_OVERLAYS := device/htc/dream_sapphire/overlay
 
